@@ -1,0 +1,9 @@
+Notas TP1 PAA:
+
+-> O gerador deve gerar números aleatórios não repetidos? (Usar princípio da casa dos pombos para evitar repetição)
+-> Verificar se o merge que usei é mesmo O(nlgn)
+-> Fontes de consulta do problema: https://www.youtube.com/watch?v=xi-WF07rAQw&t=161s -> vídeo-aula -> Inglês
+									https://www.youtube.com/watch?v=frr_Pg6Yb4c -> vídeo-aula -> Português
+									https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/closepoints.pdf -> Inglês
+									https://courses.cs.washington.edu/courses/cse421/11su/slides/05dc.pdf -> Inglês
+									https://www.ime.usp.br/~cris/aulas/10_1_6711/slides/aula2pmp.pdf -> IME USP -> Português
