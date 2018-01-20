@@ -50,6 +50,7 @@ TPair CPDC(TNo* leftAndRightPts, TNo* Points, int size, double distance){
 	int midx = Points[size/2].x; //coordenada X do meio do vetor de pontos (já ordenados por X)
 	int j = 0;
 	TPair pair;
+	leftAndRightPts = new TNo;
 	pair.distance = DBL_MAX;
 	for(int i = 0; i < size; i++){
 		if(abs(Points[i].x - midx) < distance)
@@ -60,16 +61,21 @@ TPair CPDC(TNo* leftAndRightPts, TNo* Points, int size, double distance){
 	printPoints(leftAndRightPts, j);
 	for(int i = 0; i < j - 1; i++){
 		int k = i + 1;
-		if(k == j) break;
-		while(k < j && leftAndRightPts[k].y - leftAndRightPts[i].y < distance){
+		//if(k == j) break;
+		while(k <= j && (abs(leftAndRightPts[k].y - leftAndRightPts[i].y) < distance)){
 			double dist = euclidianDistance(leftAndRightPts[k], leftAndRightPts[i]);
+			cout << "dist && distance " << dist << " && " << distance << endl;
 			if(dist < distance){
+				distance = dist;
 				TNo pt1 = createTNo(leftAndRightPts[k].x, leftAndRightPts[k].y);
             	TNo pt2 = createTNo(leftAndRightPts[i].x, leftAndRightPts[i].y);
-            	cout << "TESTEN ANTES " << pair.distance <<" (" << pair.point1.x << ", " << pair.point1.y << ") " << " (" << pair.point2.x << ", " << pair.point2.y << ")" << endl; 
+            	cout << endl;
+            	cout << "pt1 " << pt1.x << "," << pt1.y << endl;
+            	cout << "pt2 " << pt2.x << "," << pt2.y << endl;
+            	cout << "TESTE ANTES " << pair.distance <<" (" << pair.point1.x << ", " << pair.point1.y << ") " << " (" << pair.point2.x << ", " << pair.point2.y << ")" << endl; 
             	setPair(&pair, pt1, pt2);
             	setDistance(&pair, dist);
-            	cout << "TESTEN DEPOIS " << pair.distance <<" (" << pair.point1.x << ", " << pair.point1.y << ") " << " (" << pair.point2.x << ", " << pair.point2.y << ")" << endl; 
+            	cout << "TESTE DEPOIS " << pair.distance <<" (" << pair.point1.x << ", " << pair.point1.y << ") " << " (" << pair.point2.x << ", " << pair.point2.y << ")" << endl; 
 			}
 			k++;
 		}

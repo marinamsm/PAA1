@@ -1,0 +1,128 @@
+LP
+5 48
+11 4
+19 18
+21 41
+23 9
+24 43
+32 45
+33 93
+40 57
+RP
+45 33
+46 47
+47 26
+57 12
+61 93
+76 67
+78 10
+85 35
+99 42
+LP
+5 48
+11 4
+19 18
+21 41
+RP
+23 9
+24 43
+32 45
+33 93
+40 57
+LP
+5 48
+11 4
+RP
+19 18
+21 41
+brute currentMin = 44.4072 points: (5, 48) (11, 4) 
+leftDist = 44.4072 points: (5, 48) (11, 4) 
+brute currentMin = 23.0868 points: (19, 18) (21, 41) 
+rightDist = 23.0868 points: (19, 18) (21, 41) 
+Min(L, R) = 23.0868 points: (19, 18) (21, 41) 
+leftDist = 23.0868 points: (19, 18) (21, 41) 
+LP
+23 9
+24 43
+RP
+32 45
+33 93
+40 57
+brute currentMin = 34.0147 points: (23, 9) (24, 43) 
+leftDist = 34.0147 points: (23, 9) (24, 43) 
+brute currentMin = 14.4222 points: (32, 45) (40, 57) 
+rightDist = 14.4222 points: (32, 45) (40, 57) 
+Min(L, R) = 14.4222 points: (32, 45) (40, 57) 
+rightDist = 14.4222 points: (32, 45) (40, 57) 
+Min(L, R) = 14.4222 points: (32, 45) (40, 57) 
+leftDist = 14.4222 points: (32, 45) (40, 57) 
+LP
+45 33
+46 47
+47 26
+57 12
+RP
+61 93
+76 67
+78 10
+85 35
+99 42
+LP
+45 33
+46 47
+RP
+47 26
+57 12
+brute currentMin = 14.0357 points: (45, 33) (46, 47) 
+leftDist = 14.0357 points: (45, 33) (46, 47) 
+brute currentMin = 17.2047 points: (47, 26) (57, 12) 
+rightDist = 17.2047 points: (47, 26) (57, 12) 
+Min(L, R) = 14.0357 points: (45, 33) (46, 47) 
+leftDist = 14.0357 points: (45, 33) (46, 47) 
+LP
+61 93
+76 67
+RP
+78 10
+85 35
+99 42
+brute currentMin = 30.0167 points: (61, 93) (76, 67) 
+leftDist = 30.0167 points: (61, 93) (76, 67) 
+brute currentMin = 15.6525 points: (85, 35) (99, 42) 
+rightDist = 15.6525 points: (85, 35) (99, 42) 
+Min(L, R) = 15.6525 points: (85, 35) (99, 42) 
+rightDist = 15.6525 points: (85, 35) (99, 42) 
+Min(L, R) = 14.0357 points: (45, 33) (46, 47) 
+rightDist = 14.0357 points: (45, 33) (46, 47) 
+Min(L, R) = 14.0357 points: (45, 33) (46, 47) 
+Main pair1: 14.0357 points: (45, 33) (46, 47) 
+-----LR-----
+57 12
+47 26
+45 33
+32 45
+46 47
+40 57
+33 93
+dist && distance 17.2047 && 14.0357
+dist && distance 7.28011 && 14.0357
+
+pt1 45,33
+pt2 47,26
+TESTE ANTES 1.79769e+308 (1942314856, 8)  (1942252259, 1942252250)
+TESTE DEPOIS 7.28011 (45, 33)  (47, 26)
+dist && distance 14.1421 && 7.28011
+---CPDC---
+7.28011 points: (45, 33) (47, 26) 
+Main pair2: 7.28011 points: (45, 33) (47, 26) 
+Main pair1 AGAIN: 14.0357 points: (45, 33) (46, 47) 
+Min(Total) = 7.28011 points: (45, 33) (47, 26) 
+
+-----DC-----
+(45, 33) (47, 26) 7.28011
+-----END----
+brute currentMin = 3.60555 points: (21, 41) (24, 43) 
+
+-----FB-----
+(21, 41) (24, 43) 3.60555
+-----END----

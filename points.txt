@@ -1,37 +1,57 @@
-85 83
-33 58
-87 63
-56 61
-54 65
-LP
-33 58
-54 65
-RP
-56 61
-85 83
-87 63
-brute currentMin = 22.1359 points: (33, 58) (54, 65) 
-leftDist = 22.1359 points: (33, 58) (54, 65) 
-brute currentMin = 20.0998 points: (85, 83) (87, 63) 
-rightDist = 20.0998 points: (85, 83) (87, 63) 
-Min(L, R) = 20.0998 points: (85, 83) (87, 63) 
-Main pair1: 20.0998 points: (85, 83) (87, 63) 
+47 26
+11 4
+19 18
+46 47
+45 33
+57 12
+85 35
+5 48
+33 93
+61 93
+78 10
+21 41
+99 42
+23 9
+32 45
+76 67
+40 57
+24 43
+brute currentMin = 44.4072 points: (5, 48) (11, 4) 
+brute currentMin = 23.0868 points: (19, 18) (21, 41) 
+brute currentMin = 34.0147 points: (23, 9) (24, 43) 
+brute currentMin = 14.4222 points: (32, 45) (40, 57) 
+brute currentMin = 14.0357 points: (45, 33) (46, 47) 
+brute currentMin = 17.2047 points: (47, 26) (57, 12) 
+brute currentMin = 30.0167 points: (61, 93) (76, 67) 
+brute currentMin = 15.6525 points: (85, 35) (99, 42) 
+Main pair1: 14.0357 points: (45, 33) (46, 47) 
 -----LR-----
-56 61
-54 65
-TESTEN ANTES 1.79769e+308 (1955210020, 6422284)  (1954897768, 8)
-TESTEN DEPOIS 4.47214 (54, 65)  (56, 61)
+57 12
+47 26
+45 33
+32 45
+46 47
+40 57
+33 93
+dist && distance 17.2047 && 14.0357
+dist && distance 7.28011 && 14.0357
+
+pt1 45,33
+pt2 47,26
+TESTE ANTES 1.79769e+308 (1942627108, 6422284)  (1942314856, 8)
+TESTE DEPOIS 7.28011 (45, 33)  (47, 26)
+dist && distance 14.1421 && 7.28011
 ---CPDC---
-4.47214 points: (54, 65) (56, 61) 
-Main pair2: 4.47214 points: (54, 65) (56, 61) 
-Main pair1 AGAIN: 20.0998 points: (54, 65) (87, 63) 
-Min(Total) = 4.47214 points: (54, 65) (56, 61) 
+7.28011 points: (45, 33) (47, 26) 
+Main pair2: 7.28011 points: (45, 33) (47, 26) 
+Main pair1 AGAIN: 14.0357 points: (45, 33) (46, 47) 
+Min(Total) = 7.28011 points: (45, 33) (47, 26) 
 
 -----DC-----
-(54, 65) (56, 61) 4.47214
+(45, 33) (47, 26) 7.28011
 -----END----
-brute currentMin = 4.47214 points: (54, 65) (56, 61) 
+brute currentMin = 3.60555 points: (21, 41) (24, 43) 
 
 -----FB-----
-(54, 65) (56, 61) 4.47214
+(21, 41) (24, 43) 3.60555
 -----END----
