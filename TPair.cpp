@@ -34,6 +34,9 @@ TPair closestPointDC(TNo* Points, int size){
 		pair = leftDist;
 	else pair = rightDist;
 	cout << "Min(L, R) = " << pair.distance << " points: (" << pair.point1.x << ", " << pair.point1.y << ") " << "(" << pair.point2.x << ", " << pair.point2.y << ") " << endl;
+	TPair pair2 = CPDC(Points, size, pair.distance); //esta função está errada, achei várias formas de fazê-la, mas essa não deu
+	if(pair2.distance < pair.distance)
+		pair = pair2;
 	return pair; //retorna o par de distância mínima que está OU na esquerda OU na direita
 }
 
@@ -46,11 +49,11 @@ Esta parte deve verificar em uma faixa de pontos que pegue tanto pontos do quadr
 para depois comparar com o que foi encontrado em closestPointDC e obter o menor de todos do plano*/
 //ESTA FUNÇÃO ESTÁ ERRADA E HÁ DIFERENTES FORMAS DE FAZÊ-LA
 //O erro costuma ser mais percebido acima de 5 ou 7 pontos
-TPair CPDC(TNo* leftAndRightPts, TNo* Points, int size, double distance){
+TPair CPDC(TNo* Points, int size, double distance){
 	int midx = Points[size/2].x; //coordenada X do meio do vetor de pontos (já ordenados por X)
 	int j = 0;
 	TPair pair;
-	leftAndRightPts = new TNo;
+	TNo* leftAndRightPts = new TNo[size];
 	pair.distance = DBL_MAX;
 	for(int i = 0; i < size; i++){
 		if(abs(Points[i].x - midx) < distance)
