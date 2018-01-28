@@ -17,18 +17,18 @@ TPair closestPointDC(TPoint* Points, int size){
 		pair = bruteForce(Points, size); //tempo constante
 		return pair;
 	}
-	int half = size/2;
-	TPoint* LeftPoints = new TPoint[half];
+	int half = size/2; //divide o plano dos pontos ao meio
+	TPoint* LeftPoints = new TPoint[half]; //guarda os pontos do lado esquerdo
 	copy(LeftPoints, Points, 0, half);
-	TPoint* RightPoints = new TPoint[size-half];
+	TPoint* RightPoints = new TPoint[size-half]; //guarda os pontos do lado direito
 	copy(RightPoints, Points, half, size);
 	TPair leftDist = closestPointDC(LeftPoints, half); //encontra o par de menor distância no quadrante esquerdo atual do plano
 	TPair rightDist = closestPointDC(RightPoints, size-half); //encontra o par de menor distância no quadrante direito atual do plano
-	if(leftDist.distance < rightDist.distance)
+	if(leftDist.distance < rightDist.distance) //verifica em qual dos dois quadrantes está o par de menor distância atualmente
 		pair = leftDist;
 	else pair = rightDist;
-	TPair pair2 = CPDC(Points, size, pair.distance); //encontrar o par de menor distância com um ponto à esquerda e um à direita
-	if(pair2.distance < pair.distance)
+	TPair pair2 = CPDC(Points, size, pair.distance); //encontra o par de menor distância com um ponto no quadrante esquerdo e um no direito
+	if(pair2.distance < pair.distance) //verifica qual é o par de menor distância do plano
 		pair = pair2;
 	return pair; //retorna o par de distância mínima
 }
@@ -44,17 +44,19 @@ TPair CPDC(TPoint* Points, int size, double distance){
 	int midx = Points[size/2].x; //coordenada X do meio do vetor de pontos (já ordenados por X)
 	int j = 0;
 	TPair pair;
-	TPoint* leftAndRightPts = new TPoint[size];
+	TPoint* leftAndRightPts = new TPoint[size]; //para guardar os pontos da faixa central do plano
 	pair.distance = DBL_MAX;
 	for(int i = 0; i < size; i++){
 		if(abs(Points[i].x - midx) < distance)
-			leftAndRightPts[j++] = Points[i]; //guarda todos os pontos que se encontram à distância currentMin do meio do vetor de pontos
+			leftAndRightPts[j++] = Points[i]; //guarda todos os pontos que se encontram na faixa central do plano
 	}
-	merge(leftAndRightPts, j, 1); //sinaliza que os pontos devem ser ordenados pela coordenada Y --> O(nlgn)
+	merge(leftAndRightPts, j, 1); //1 sinaliza que os pontos devem ser ordenados pela coordenada Y --> O(nlgn)
 	for(int i = 0; i < j - 1; i++){
 		int k = i + 1;
+		//calcula a distância entre as coordenadas y de cada ponto
 		while(k <= j && (abs(leftAndRightPts[k].y - leftAndRightPts[i].y) < distance)){
 			double dist = euclidianDistance(leftAndRightPts[k], leftAndRightPts[i]);
+			//se a distância for menor que a distância mínima atual então foi encontrado um novo par
 			if(dist < distance){
 				distance = dist;
 				TPoint pt1 = createTPoint(leftAndRightPts[k].x, leftAndRightPts[k].y);
@@ -66,7 +68,8 @@ TPair CPDC(TPoint* Points, int size, double distance){
 		}
 	}
 	delete[] leftAndRightPts;
-	return pair;
+	//retorna o par de distância mínima ou com distância infinita caso não exista nenhum na faixa central
+	return pair; 
 }
 
 //força bruta O(n^2)
